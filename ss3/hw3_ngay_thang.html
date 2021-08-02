@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    /* In ra so ngay trong thang
+    Input: year, month
+    Output: so ngay trong thang*/
+    <script>
+        let y = parseInt(prompt("Enter year: "))
+        let m = parseInt(prompt("Enter month: "))
+        let days_31 = [1,3,5,7,8,10,12]
+        let days_30 = [4,6,9,11]
+        let leap_year = false
+        if (y % 4 == 0) {
+             if (y % 100 == 0) {
+                if (y % 400 == 0) {
+                    leap_year = true
+                }
+             } else {
+                 leap_year = true
+             }
+        }
+        if (days_31.includes(m)) {
+            console.log("31 days")
+        } else if (days_30.includes(m)) {
+            console.log("30 days")
+        } else {
+            if (leap_year) {
+                console.log("29 days")
+            } else {
+                console.log("28 days")
+            }
+        }
+    </script>
+</body>
+</html>

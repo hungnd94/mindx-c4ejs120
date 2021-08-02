@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Nguoi dung nhap so nguyen duong N tuy y
+        Kiem tra xem N co phai so hoan hao khong */
+        let n = parseInt(prompt('Enter a positive integer: '))
+
+        function test_perfect(a) {
+            let root = Math.floor(Math.sqrt(a))
+            let sum = 0
+            for (let i = 1; i <= root; i++) {
+                if (a % i == 0) {
+                    if (i*i == a) {
+                        sum += i
+                    } else {
+                        sum += i + a/i
+                    }
+                }
+            }
+            if (sum == 2*n) {return true}
+            return false
+        }
+
+        if (n > 1 && test_perfect(n)) {console.log(n + ' la so hoan hao')}
+        else {console.log(n + ' khong phai so hoan hao')}
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Giai phuong trinh ax^2 + bx + c = 0 */
+        let y = prompt("Enter the coefficients a,b,c: ").split(" ").map(x=>+x);
+        let a = y[0];
+        let b = y[1];
+        let c = y[2];
+        if (a == 0) {
+            if (b == 0) {
+                if (c == 0) {
+                    console.log("Phuong trinh dung voi moi x");
+                } else {
+                    console.log("Phuong trinh khong co nghiem");
+                }
+            } else {
+                x = -c/b;
+                console.log("x = " + x);
+            }
+        } else {
+            delta = b**2 - 4*a*c;
+            if (delta > 0) {
+                delta_sqrt = Math.sqrt(delta);
+                x1 = (-b-delta_sqrt)/(2*a);
+                x2 = (-b+delta_sqrt)/(2*a);
+                console.log("x1 = " + x1 + " ,x2 = " + x2);
+            } else if (delta < 0) {
+                console.log("Phuong trinh khong co nghiem");
+            } else {
+                x = -b/(2*a);
+                console.log("x = " + x);
+            }
+        }
+    </script>
+</body>
+</html>

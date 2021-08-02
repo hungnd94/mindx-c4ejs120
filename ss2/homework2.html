@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework SS2</title>
+</head>
+<body>
+    <script>
+        /*
+        Mô tả: Nhập vào ngày (d), tháng (m), năm (y).
+        Thuật toán sẽ tính xem đó là thứ mấy trong tuần và in ra màn hình.
+        */
+        let y = parseInt(prompt("Enter year: "))
+        let m = parseInt(prompt("Enter month: "))
+        let d = parseInt(prompt("Enter day: "))
+        if (m == 1 || m == 2) {
+            m += 12
+            y -= 1
+        }
+        let tail = y % 100
+        let head = (y - tail)/100
+        temp1 = Math.floor((13*(m + 1))/5)
+        temp2 = Math.floor(head/4) + Math.floor(tail/4)
+        w = temp1 + temp2 + d + tail - 2*head
+        w = w % 7
+        if (w == 1) {
+            console.log("Sunday")
+        } else if (w == 2) {
+            console.log("Monday")
+        } else if (w == 3) {
+            console.log("Tuesday")
+        } else if (w == 4) {
+            console.log("Wednesday")
+        } else if (w == 5) {
+            console.log("Thursday")
+        } else if (w == 6) {
+            console.log("Friday")
+        } else {
+            console.log("Saturday")
+        } 
+    </script>
+</body>
+</html>

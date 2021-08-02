@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Nhập vào cận dưới và cận trên a, b, thỏa mãn a <= b, a,b là số nguyên dương
+        Tìm các số chính phương trong đoạn [a,b] (bao gồm cả a và b) */
+        let a = parseInt(prompt('Enter the lower bound: '))
+        let b = parseInt(prompt('Enter the upper bound'))
+        let square_lower = Math.ceil(Math.sqrt(a))
+        let square_upper = Math.floor(Math.sqrt(b))
+        if (square_lower > square_upper) {
+            console.log('Khong co so chinh phuong nao trong khoang')
+        } else {
+            console.log('Cac so chinh phuong trong khoang la: ')
+            for (let i = square_lower; i <= square_upper; i++) {
+                console.log(i*i)
+            }
+        }
+    </script>
+</body>
+</html>
