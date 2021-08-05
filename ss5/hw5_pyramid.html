@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Input: the height N > 1 of the pyramid.
+        Output: prints the reverse pyramid
+        Example N = 3
+        ---
+         --
+          -
+        */
+        let correct_input = false
+        while (!correct_input) {
+            var N = parseInt(prompt('Enter the height of the pyramid (at least 2): '))
+            correct_input = (Number.isInteger(N)) && (N > 1)
+        }
+        let brick = '-'
+        let space = ' '
+        let first_line = ''
+        let next_line = ''
+        for (let i = 0; i < N; i++) {
+            first_line += brick
+        }
+        console.log(first_line)
+        for (let j = 1; j < N; j++) {
+            for (let k = 0; k < j; k++) {
+                next_line += space
+            }
+            for (let m = 0; m < N - j; m++) {
+                next_line += brick
+            }
+            console.log(next_line)
+            next_line = ''
+        }
+    </script>
+</body>
+</html>
