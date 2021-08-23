@@ -1,0 +1,32 @@
+/* floating */
+
+/* Apply this to all tags whatsoever */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: rgb(26, 121, 0);
+    color: white !important;
+}
+
+.nav-item {
+    font-size: 20px;
+    width: 10%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.arr-left {
+    float: left;
+}
+
+.arr-right {
+    float: right;
+}
+
+#nav-list {
+    margin: 0px 200px;
+    list-style: none;
+}
